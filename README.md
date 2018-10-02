@@ -11,6 +11,13 @@ Please don't spend more than 2 hours on this. On completion, please provide a li
 
 To run
 ---------
-`$ docker-compose up`
+```bash
+$ docker-compose build
+$ docker-compose up
+$ docker-compose exec web python manage.py migrate
+$ docker-compose exec web python manage.py createsuperuser
+```
 
-Please make sure your final solution still runs with docker.
+Once the docker container is working and running a separate terminal should be used to handle the management commands to migrate and create a super user.
+
+Visit in a browser http://localhost:8000/admin and login with the superuser credentials you just created.
